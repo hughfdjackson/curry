@@ -19,7 +19,17 @@ If you don't know currying, or aren't sold on it's awesomeness, perhaps [a frien
 ```javascript
 var curry = require('curry');
 
-//-- creating a curried function is pretty
+//-- vanilla partially applied function:
+function add(a) {
+    return function(b) {
+        return a + b;
+    };
+}
+
+//-- called like this:
+add(1)(2) //=3
+
+//-- creating the curried equivalent is pretty
 //-- straight forward:
 var add = curry(function(a, b){ return a + b });
 
